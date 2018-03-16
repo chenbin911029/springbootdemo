@@ -2,6 +2,8 @@ package spring.boot.core.web;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -24,14 +26,17 @@ public class UserController {
     UserService userService;
 
     /**
-     *  获取用户列表
-     *    处理 "/users" 的 GET 请求，用来获取用户列表
+     *  获取用户分页列表
+     *    处理 "/users" 的 GET 请求，用来获取用户分页列表
      *    通过 @RequestParam 传递参数，进一步实现条件查询或者分页查询
+     *
+     *    Pageable 支持的分页参数如下
+     *    page - 当前页 从 0 开始
+     *    size - 每页大小 默认值在 application.properties 配置
      */
     @RequestMapping(method = RequestMethod.GET)
-    public String getUserList(ModelMap map) {
-        map.addAttribute("userList",userService.findAll());
-        return "userList";
+    public Page<User> getUserPage(Pageable pageable) {
+        return userService.findByPage(pageable);
     }
 
     /**

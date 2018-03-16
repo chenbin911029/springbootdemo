@@ -4,6 +4,8 @@ package spring.boot.core.service.impl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import spring.boot.core.domain.User;
 import spring.boot.core.domain.UserRepository;
@@ -50,5 +52,19 @@ public class UserServiceImpl implements UserService {
     public User findById(Long id) {
         LOGGER.info("获取用户 ID ：" + id);
         return userRepository.findById(id).get();
+    }
+
+    /**
+     * 获取用户分页列表
+     *
+     * @param pageable
+     * @return
+     */
+    @Override
+    public Page<User> findByPage(Pageable pageable) {
+        LOGGER.info(" \n 分页查询用户："
+                + " PageNumber = " + pageable.getPageNumber()
+                + " PageSize = " + pageable.getPageSize());
+        return userRepository.findAll(pageable);
     }
 }

@@ -12,6 +12,6 @@
 	<description>Demo project for Spring Boot</description>
 
 	<modules>
-		<module>chapter-2-spring-boot-quick-start</module>
+		<module>spring-boot-quick-start</module>
 	</modules>
 </project>
