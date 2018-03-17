@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import spring.boot.core.dao.master.UserDao;
 import spring.boot.core.domain.User;
 import spring.boot.core.domain.UserRepository;
 import spring.boot.core.service.UserService;
@@ -21,6 +22,8 @@ public class UserServiceImpl implements UserService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    private UserDao userDao;
 
     @Override
     public List<User> findAll() {
@@ -67,4 +70,5 @@ public class UserServiceImpl implements UserService {
                 + " PageSize = " + pageable.getPageSize());
         return userRepository.findAll(pageable);
     }
+
 }

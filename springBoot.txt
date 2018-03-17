@@ -1,5 +1,17 @@
 chapter-2-spring-boot-quick-start
 springboot-helloworld
+
 springboot-properties
+配置信息
 spring-configuration
+校验表单
 chapter-4-spring-boot-validating-form-input
+chapter-5-spring-boot-paging-sorting
+整合mybatis
+springboot-mybatis
+使用mybatis注解
+springboot-mybatis-annotation
+使用多个数据源
+springboot-mybatis-mutil-datasource
+
+
