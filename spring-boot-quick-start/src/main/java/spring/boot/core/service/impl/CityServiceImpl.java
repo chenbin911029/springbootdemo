@@ -8,6 +8,8 @@ import spring.boot.core.domain.City;
 import spring.boot.core.domain.User2;
 import spring.boot.core.service.CityService;
 
+import java.util.List;
+
 /**
  * 城市业务逻辑实现类
  *
@@ -29,6 +31,13 @@ public class CityServiceImpl implements CityService {
         //return cityDao2.findById(cityName);
     }
 
+    public List<City> findAllCity(){
+        return cityDao.findAllCity();
+    }
+
+    public City findCityById(Long id) {
+        return cityDao.findById(id);
+    }
 
     public User2 findById(Long id) {
         User2 user = userDao.findById(id);

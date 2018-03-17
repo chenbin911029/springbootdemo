@@ -1,8 +1,6 @@
 package spring.boot.core.service;
 
-
 import spring.boot.core.domain.City;
-import spring.boot.core.domain.User2;
 
 import java.util.List;
 
@@ -14,19 +12,11 @@ import java.util.List;
 public interface CityService {
 
     /**
-     * 根据城市名称，查询城市信息
-     * @param cityName
-     */
-    City findCityByName(String cityName);
-
-    /**
      * 获取城市信息列表
      *
      * @return
      */
     List<City> findAllCity();
-
-    User2 findById(Long id);
 
     /**
      * 根据城市 ID,查询城市信息
@@ -35,4 +25,28 @@ public interface CityService {
      * @return
      */
     City findCityById(Long id);
+
+    /**
+     * 新增城市信息
+     *
+     * @param city
+     * @return
+     */
+    Long saveCity(City city);
+
+    /**
+     * 更新城市信息
+     *
+     * @param city
+     * @return
+     */
+    Long updateCity(City city);
+
+    /**
+     * 根据城市 ID,删除城市信息
+     *
+     * @param id
+     * @return
+     */
+    Long deleteCity(Long id);
 }

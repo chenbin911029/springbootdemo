@@ -22,7 +22,7 @@ public class CityController {
     @Autowired
     private CityService cityService;
 
-    @RequestMapping(value = "/city", method = RequestMethod.GET)
+    @RequestMapping(value = "/cityByName", method = RequestMethod.GET)
     @ResponseBody
     public City findOneCity(@RequestParam(value = "cityName", required = true) String cityName) {
         return cityService.findCityByName(cityName);
@@ -33,8 +33,6 @@ public class CityController {
     public User2 findById(@RequestParam(value = "id", required = true) Long id) {
         return cityService.findById(id);
     }
-
-
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String createUserForm(ModelMap map) {

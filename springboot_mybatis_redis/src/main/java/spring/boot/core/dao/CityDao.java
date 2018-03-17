@@ -1,4 +1,4 @@
-package spring.boot.core.dao.cluster;
+package spring.boot.core.dao;
 
 import org.apache.ibatis.annotations.Param;
 import spring.boot.core.domain.City;
@@ -11,13 +11,6 @@ import java.util.List;
  * Created by bysocket on 07/02/2017.
  */
 public interface CityDao {
-
-    /**
-     * 根据城市名称，查询城市信息
-     *
-     * @param cityName 城市名
-     */
-    City findByName(@Param("cityName") String cityName);
 
     /**
      * 获取城市信息列表
@@ -33,4 +26,10 @@ public interface CityDao {
      * @return
      */
     City findById(@Param("id") Long id);
+
+    Long saveCity(City city);
+
+    Long updateCity(City city);
+
+    Long deleteCity(Long id);
 }
