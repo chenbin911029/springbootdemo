@@ -22,3 +22,38 @@ springboot-restful
 springboot整合mybatis_redis
 springboot-mybatis-redis
 
+配置文件
+application.properties
+server.port = 9090
+server.context-path=/helloboot
+
+application.yml
+server:
+    port:9090
+    contextPath:/helloboot
+
+xml配置
+@ImportResource({"classpath:some-context.xml"})
+@PropertySource({"classpath:application.properties"})
+
+@ConfigurationProperties(prefix="author")
+6.4 Profile配置
+application-{profile}.properties
+application-dev.properties
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
